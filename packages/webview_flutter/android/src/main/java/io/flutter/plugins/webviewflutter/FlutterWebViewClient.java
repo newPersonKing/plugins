@@ -123,6 +123,7 @@ class FlutterWebViewClient {
   private void onPageFinished(WebView view, String url) {
     Map<String, Object> args = new HashMap<>();
     args.put("url", url);
+    args.put("contentHeight",view.getContentHeight());
     methodChannel.invokeMethod("onPageFinished", args);
   }
 
